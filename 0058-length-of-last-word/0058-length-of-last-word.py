@@ -5,5 +5,5 @@ class Solution(object):
         :rtype: int
         """
         li=s.split()
-        y=li[-1]
-        return len(y)
+        print(li)
+        return len(li[-1])
