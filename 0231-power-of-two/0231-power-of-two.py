@@ -9,6 +9,5 @@ class Solution(object):
             if n==math.pow(2,x):
                 return True
                 
-            else:
-                print('false')
+        return False
                 
