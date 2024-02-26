@@ -28,7 +28,6 @@ class Solution {
        ListNode Next = present.next;
 
         while (present != null) {
-            // Next = present.next;
             present.next = prev;
             prev = present;
             present = Next;
