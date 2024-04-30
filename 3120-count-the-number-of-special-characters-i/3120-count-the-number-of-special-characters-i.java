@@ -11,8 +11,8 @@ class Solution {
                cap[c-'A']++;
             }
         }
-        System.out.println(Arrays.toString(small));
-        System.out.println(Arrays.toString(cap));
+        // System.out.println(Arrays.toString(small));
+        // System.out.println(Arrays.toString(cap));
         int result=0;
         for(int i=0;i<26;i++){
            if(small[i]>0 && cap[i]>0){
