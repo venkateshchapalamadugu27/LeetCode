@@ -1,9 +1,5 @@
-class Solution(object):
-    def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
         new=list(set(nums))
         length=len(nums)//3
         ans=[]
@@ -11,5 +7,3 @@ class Solution(object):
             if nums.count(i) > length :
                 ans.append(i)
         return ans
-
-        
