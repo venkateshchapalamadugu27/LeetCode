@@ -1,9 +1,5 @@
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
         li=list(set(nums))
         lis=[]
         for i in li:
