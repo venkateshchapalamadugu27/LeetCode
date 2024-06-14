@@ -1,7 +1,7 @@
 class Solution {
     public int minIncrementForUnique(int[] nums) {
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        // System.out.println(Arrays.toString(nums));
         int moves=0;
         for(int i=1;i<nums.length;i++){
             if(nums[i]<=nums[i-1]){
