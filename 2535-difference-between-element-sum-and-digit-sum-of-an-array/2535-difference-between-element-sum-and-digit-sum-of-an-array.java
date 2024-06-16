@@ -3,10 +3,11 @@ class Solution {
         int elementSum=0,digitSum=0;
         for(int num:nums){
             elementSum+=num;
-        }
-        for(int num:nums){
             digitSum+=check(num);
         }
+        // for(int num:nums){
+        //     digitSum+=check(num);
+        // }
         return Math.abs(elementSum-digitSum);
 
     }
