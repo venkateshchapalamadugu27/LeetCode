@@ -1,24 +1,18 @@
 class Solution {
     public String freqAlphabets(String s) {
-        List<String> list=new ArrayList<>();
+        String r="";
         for(int i=s.length()-1;i>=0;i--){
             if(String.valueOf(s.charAt(i)).equals("#")){
                if(i>=2){
-                 list.add(s.substring(i-2,i));
-                 i-=2;
+                String temp=s.substring(i-2,i);
+                r=r+(char)(Integer.parseInt(temp)+'a'-1);
+                i-=2;
                }
             }else{
-                list.add(String.valueOf(s.charAt(i)));
+                r=r+(char)(Integer.parseInt(String.valueOf(s.charAt(i)))+'a'-1);
             }
         }
-        // System.out.println(list);
-        String r="";
-        for(int i=0;i<list.size();i++){
-            int num=Integer.parseInt(list.get(i));
-            r=r+(char)(num+'a'-1);
-        }
-        StringBuilder sb=new StringBuilder(r);
-        sb.reverse();
-        return sb.toString();
+        return new StringBuilder(r).reverse().toString();
     }
+    
 }
