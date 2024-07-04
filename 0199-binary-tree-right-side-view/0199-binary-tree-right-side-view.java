@@ -14,26 +14,27 @@
  * }
  */
 class Solution {
-    List<Integer> list=new ArrayList<>();
     public List<Integer> rightSideView(TreeNode root) {
-        if(root==null){
-            return new ArrayList<>();
+        List<Integer> res=new ArrayList<>();
+
+        if(root==null) return res;
+
+        Queue<TreeNode> queue=new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            int levelSize=queue.size();
+            
+            for(int i=0;i<levelSize;i++){
+                TreeNode current=queue.poll();
+                if(i==levelSize-1){
+                    res.add(current.val);
+                }
+                if(current.left!=null) queue.offer(current.left);
+                if(current.right!=null) queue.offer(current.right);
+            }
         }
-        List<Integer> list=new ArrayList<>();
-        helper(root,list,0);
-        return list;
-    }
-    private void helper(TreeNode root,List<Integer> list,int level){
-       if(root!=null && level==list.size()){
-        list.add(root.val);
-       }
-       if(root.right!=null){
-        helper(root.right,list,level+1);
-       }
-       if(root.left!=null){
-        helper(root.left,list,level+1);
-       }
+        
+        return res;
     }
 }
-
-// father mother brother sister rass leaves sea hills restaurant bakery
