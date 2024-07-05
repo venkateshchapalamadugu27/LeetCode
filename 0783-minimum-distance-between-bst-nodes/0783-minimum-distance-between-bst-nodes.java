@@ -42,13 +42,20 @@ class Solution {
     }
     
     private static int minDist(List<Integer> list){
-        int s=0,e=list.size()-1;
+        // int s=0,e=list.size()-1;
+        // int min=Integer.MAX_VALUE;
+        // for(int i=s;i<e;i++){
+        //     for(int j=i+1;j<=e;j++){
+        //         min=Math.min(min,Math.abs(list.get(i)-list.get(j)));
+        //     }
+        // }
+        // return min;
+        Collections.sort(list);
         int min=Integer.MAX_VALUE;
-        for(int i=s;i<e;i++){
-            for(int j=i+1;j<=e;j++){
-                min=Math.min(min,Math.abs(list.get(i)-list.get(j)));
-            }
+        for(int i=1;i<list.size();i++){
+            min=Math.min(min,Math.abs(list.get(i)-list.get(i-1)));
         }
         return min;
+        
     }
 }
