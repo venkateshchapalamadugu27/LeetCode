@@ -15,9 +15,6 @@
  */
 class Solution {
     public int minDiffInBST(TreeNode root) {
-        // List<Integer> list=new ArrayList<>();
-        // list=toList(root);
-        // System.out.println(list);
         return toList(root);
     }
     private static int toList(TreeNode root){
