@@ -24,17 +24,20 @@ class Solution {
         
         while(!queue.isEmpty()){
             int level=queue.size();
-            List<Integer> temp=new ArrayList<>();
+            // List<Integer> temp=new ArrayList<>();
+            int max=Integer.MIN_VALUE;
             for(int i=0;i<level;i++){
                 TreeNode current=queue.poll();
-                temp.add(current.val);
+                if(current.val>max){
+                    max=current.val;
+                }
                 
                 if(current.left!=null) queue.offer(current.left);
                 if(current.right!=null) queue.offer(current.right);
                 
             }
-            Collections.sort(temp);
-            list.add(temp.get(temp.size()-1));
+            // Collections.sort(temp);
+            list.add(max);
         }
         
         return list;
