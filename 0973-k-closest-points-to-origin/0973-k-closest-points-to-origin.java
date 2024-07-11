@@ -21,6 +21,7 @@ class Solution {
         for(int i=0;i<k;i++){
             List<Integer> innerList=bigList.get(i);
             int index=innerList.get(1);
+            
             result[i][0]= points[index][0] ;
             result[i][1]= points[index][1];
         }
