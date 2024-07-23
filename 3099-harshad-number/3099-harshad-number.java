@@ -1,11 +1,10 @@
 class Solution {
     public int sumOfTheDigitsOfHarshadNumber(int x) {
-        int num=x,sum=0;
-        while(num>0){
-            int rem=num%10;
-            sum+=rem;
-            num/=10;
+        int sum=0,num=x;
+        while(x>0){
+            sum=sum+(x%10);
+            x/=10;
         }
-        return x%sum==0?sum:-1;
+        return num%sum==0 ? sum : -1 ;
     }
 }
