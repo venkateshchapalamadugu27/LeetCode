@@ -47,8 +47,6 @@ class Solution{
                 i++;j++;
             }
         }
-
-        return mat;
-        
+        return mat;   
     }
 }
