@@ -10,7 +10,6 @@
 public class Codec {
 
     StringBuilder serStr = new StringBuilder();
-    String s="";
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
