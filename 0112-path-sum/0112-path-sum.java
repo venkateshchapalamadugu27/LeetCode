@@ -17,6 +17,7 @@ class Solution {
     public List<Integer> list=new ArrayList<>();
     public boolean hasPathSum(TreeNode root, int targetSum) {
         helper(root,0);
+        System.out.println(list);
         return list.contains(targetSum);
     }
     private void helper(TreeNode node,int sum){
