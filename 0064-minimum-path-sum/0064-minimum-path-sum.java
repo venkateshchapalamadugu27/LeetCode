@@ -7,10 +7,10 @@ class Solution {
 
         return helper(grid);
     }
-
+// final matrix after dp. last element is the output.
 // 1 4 5
-// 2 5 1
-// 6 2 1
+// 2 7 6
+// 6 8 7
 
     int helper(int[][] grid){
        int row=grid.length;
