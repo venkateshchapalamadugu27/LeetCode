@@ -24,7 +24,6 @@ class Solution {
         }
         else{
             return searchBST(root.left,val);
-        }
-        
+        } 
     }
 }
