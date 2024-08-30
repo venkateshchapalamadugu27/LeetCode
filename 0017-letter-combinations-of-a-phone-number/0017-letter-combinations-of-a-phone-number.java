@@ -2,8 +2,9 @@ class Solution {
     public static List<String> letterCombinations(String digits) {
 
         if(digits.length()==0) {
-            List<String> res=new ArrayList<>();
-            return res;
+            // List<String> res=new ArrayList<>();
+            // return res;
+            return new ArrayList<>();
         }
 
         String[] arr={"","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
@@ -67,7 +68,8 @@ class Solution {
         for(int i=0;i<s1.length();i++){
             for(int j=0;j<s2.length();j++){
                 for(int k=0;k<s3.length();k++){
-                    String s=String.valueOf(s1.charAt(i))+String.valueOf(s2.charAt(j))+String.valueOf(s3.charAt(k));
+                    String s=String.valueOf(s1.charAt(i))+String.valueOf(s2.charAt(j))+
+                             String.valueOf(s3.charAt(k));
                     list.add(s);
                 }
             }
