@@ -31,7 +31,6 @@ class Solution {
             if(node.left.left != null){
                result+=node.left.left.val;
             }
-
             if(node.left.right != null){
                result+=node.left.right.val;
             }
@@ -44,7 +43,7 @@ class Solution {
             if(node.right.right != null){
                result+=node.right.right.val;
             }
-        }
+         }
       }
 
       helper(node.left);
