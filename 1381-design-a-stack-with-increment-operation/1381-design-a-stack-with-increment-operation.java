@@ -1,48 +1,62 @@
 class CustomStack {
-    private int[] arr;
-    private int ptr=-1;
+    int[] arr;
+    int currIndex=0;
+
     public CustomStack(int maxSize) {
-        this.arr=new int[maxSize];
+        arr=new int[maxSize];
+        Arrays.fill(arr,-1);
+        
     }
     
     public void push(int x) {
-        if(isFull()){
-            return ;
-        }
-        ptr++;
-        arr[ptr]=x;
-        return ;
+        if(currIndex==arr.length)
+        return;
+        arr[currIndex]=x;
+        currIndex++;
     }
     
     public int pop() {
-        if(isEmpty()){
-            return -1;
-        }
-        int remove=arr[ptr];
-        ptr--;
-        return remove;
+        if(count(arr)==0)
+        return -1;
+
+        int temp = arr[currIndex-1];
+        arr[currIndex-1]=-1;
+        if(currIndex!=0)
+        currIndex--;
+
+        return temp;
+
+        
     }
     
     public void increment(int k, int val) {
-        if(ptr!=-1){
-            if(k>ptr){
-                for(int i=0;i<ptr+1;i++){
-                    arr[i]+=val;
-                }
-            }
-            else{
-                for(int i=0;i<k;i++){
-                    arr[i]+=val;
-                }
+        int c = count(arr);
+        if(k>=c)
+        {
+            for(int i=0;i<arr.length;i++)
+            {
+                if(arr[i]!=-1)
+                arr[i]=arr[i]+val;
             }
         }
+        else
+        {
+            for(int i =0;i<k;i++)
+            {
+                arr[i]=arr[i]+val;
+            }
+        }
+        
     }
-
-    private boolean isEmpty(){
-        return ptr==-1;
-    }
-    private boolean isFull(){
-        return ptr==arr.length -1;
+    public int count(int[] arr)
+    {
+        int count=0;
+        for(int ele : arr)
+        {
+            if(ele!=-1)
+            count++;
+        }
+        return count;
     }
 }
 
